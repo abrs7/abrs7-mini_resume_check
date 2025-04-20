@@ -4,18 +4,6 @@ Welcome to the **StartUp Agile - Mini Resume Ranker**! This project allows you t
 
 ---
 
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [API Documentation](#api-documentation)
-- [Technologies](#technologies)
-- [Setup and Installation](#setup-and-installation)
-- [Health Check](#health-check)
-- [Endpoints](#endpoints)
-- [Contributing](#contributing)
-
----
 
 ## Project Overview
 
@@ -38,3 +26,81 @@ The API is built using **FastAPI** and includes a variety of endpoints for inter
 
 ### Base URL
 
+http://localhost:8000
+
+### Health Check Endpoint
+
+- **GET /health**
+
+  A simple endpoint to check if the service is running.
+
+  **Response:**
+
+  ```json
+  {
+    "status": "ok"
+  }
+  ```
+
+---
+
+### **Part 7: Resume Ranking Endpoint**
+```markdown
+### Resume Ranking Endpoint
+
+- **POST `/rank`**
+
+  Accepts a POST request with a resume and job description. Returns a score and feedback based on AI analysis.
+
+  **Request Body:**
+  ```json
+  {
+    "resume": "string",
+    "job_description": "string",
+    "photo": "base64_encoded_image_string"  // Optional
+  }
+  ```
+  **Response:**
+  ```json
+  {
+  "score": 95,
+  "feedback": "The resume is an excellent match for the job description. The candidate's 6+ years of Python backend experience, specific experience with FastAPI,  proven LLM integration (OpenAI GPT),  CI/CD implementation with Docker and GitHub Actions, and focus on API performance optimization align perfectly with the requirements.  The mention of mentoring and open-source contributions adds value. The only minor gap is a lack of explicit mention of integrating models beyond OpenAI, but the experience with GPT and focus on LLM applications strongly suggests transferrable skills. The candidate's experience surpasses the minimum requirements.",
+  "photo_check": "Looks professional"
+}
+  ```
+## Testing
+
+This project uses **pytest** for unit and integration testing. Follow these steps to run the tests:
+
+1. Run all tests::
+   ```bash
+    pytest tests/
+   ```
+
+  ## Setup and Installation
+
+### Prerequisites
+
+- Python 3.9+ installed
+- PostgreSQL installed and running
+
+### Clone Repository
+
+```bash
+git clone https://github.com/abrs7/abrs7-mini_resume_check.git
+cd abrs7-mini_resume_check
+```
+
+
+
+### Create Virtual Environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).  
+Created by Abraham Asrat, email: abrahamasrat791@gmail.com
