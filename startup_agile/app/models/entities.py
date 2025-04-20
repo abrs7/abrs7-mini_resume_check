@@ -10,3 +10,4 @@ class ResumeMatch(Base):
     score = Column(Integer)
     feedback = Column(Text)
     photo_check = Column(Text, nullable=True)
+    image_base64 = Column(Text, nullable=True)
