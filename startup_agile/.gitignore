@@ -1,0 +1,52 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Environment variables file
+.env
+
+# Docker related
+docker-compose.yml
+Dockerfile
+*.log
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# VSCode settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# pytest
+.cache/
+
+# SQLAlchemy migrations folder (if using Alembic)
+migrations/
+
+# FastAPI / Starlette default directories
+static/
+templates/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Linux
+*.swp
+
+# Windows
+Thumbs.db
+ehthumbs.db
