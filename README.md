@@ -44,8 +44,6 @@ http://localhost:8000
 
 ---
 
-### **Part 7: Resume Ranking Endpoint**
-```markdown
 ### Resume Ranking Endpoint
 
 - **POST `/rank`**
@@ -99,7 +97,16 @@ cd abrs7-mini_resume_check
 python3 -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
+### Docker Setup
 
+1. **Build the Docker image**:
+   ```bash
+   docker build -t resume-ranker .
+   ```
+2. **Run the container (ensure your .env file exists in the project root)**
+    ```bash
+    docker run -p 8000:8000 --env-file .env resume-ranker
+    ```
 ## License
 
 This project is licensed under the [MIT License](LICENSE).  
