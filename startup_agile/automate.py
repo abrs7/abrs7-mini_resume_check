@@ -1,0 +1,28 @@
+import requests
+
+samples = [
+    {
+      "resume": "I am a seasoned backend engineer with over 6 years of experience designing, building, and maintaining scalable Python-based web applications. In my current role at a fintech startup, I’ve led the development of RESTful APIs using FastAPI and Flask, managing user authentication, billing systems, and third-party integrations. I also implemented CI/CD pipelines with GitHub Actions and Docker to ensure smooth deployment across staging and production.\n\nIn 2023, I began integrating OpenAI’s GPT models into internal tools for client communication and data summarization. This included designing prompts, optimizing latency using async queues, and building a fine-tuned workflow for legal document summarization. I also collaborated with the data team to monitor model outputs and refine accuracy using evaluation datasets.\n\nI enjoy mentoring junior developers and have contributed to open-source projects related to prompt templating and API performance benchmarking. While my primary focus is backend systems, I’m passionate about the evolving LLM landscape and its applications in automation, summarization, and customer service.",
+      "job_description": "Role: LLM Application Engineer (Remote)\n\nWe are looking for a backend software engineer with a strong foundation in Python and a proven track record of working with LLMs (Large Language Models) in real-world applications. You’ll be part of a cross-functional team building internal and customer-facing tools powered by generative AI.\n\nResponsibilities:\n- Build and maintain APIs and services using Python (preferably FastAPI)\n- Integrate LLMs (e.g., OpenAI, Claude, Mistral) into products with attention to latency, cost, and output quality\n- Collaborate with product, design, and ML teams to define use cases and evaluate performance\n- Deploy services using Docker and CI/CD pipelines\n- Monitor API behavior, manage usage quotas, and handle error cases intelligently\n\nRequirements:\n- 3+ years of professional backend development experience with Python\n- Hands-on experience integrating LLMs into applications\n- Familiarity with prompt design, output evaluation, and error handling for AI models\n- Understanding of deployment best practices using Docker and version control\n- Strong written and verbal communication skills"
+    },
+    {
+      "resume": "I'm a full-stack developer with 4 years of experience in JavaScript, TypeScript, and Python. Most of my projects involved building dashboards and admin tools using React and Django. I’ve occasionally worked on Flask-based microservices and have experimented with OpenAI’s GPT API for a personal project that summarized meeting transcripts.\n\nI’m comfortable working with APIs and have deployed containerized applications with Docker and GitHub Actions. While I haven’t worked on commercial LLM applications, I follow the space closely and enjoy playing with prompt engineering techniques during my spare time.",
+      "job_description": "Role: Generative AI Engineer\n\nWe are looking for a backend engineer with strong Python fundamentals who has experience working with large language models. Your responsibilities will include integrating LLMs into core services, optimizing outputs, and working closely with the machine learning team.\n\nRequirements:\n- 2+ years experience building backend systems with Python\n- Familiarity with LLM APIs and prompt engineering\n- Hands-on experience deploying APIs and services\n- Bonus: experience with real-time or streaming systems"
+    },
+    {
+      "resume": "A seasoned logistics and supply chain manager with over 10 years of experience optimizing inventory operations, warehouse management systems, and distribution logistics across Asia and Europe. Led enterprise-level SAP integrations and reduced costs by 15% through predictive forecasting and vendor performance reviews.\n\nCertified Six Sigma Black Belt. Adept in operations analytics and cross-border fulfillment processes. Looking for my next challenge in operational excellence and enterprise planning.",
+      "job_description": "Role: Python API Engineer with LLM Integration\n\nJoin a fast-moving team building AI tools for summarization, Q&A, and code generation. We are looking for a Python developer with a strong background in API development and real-world experience working with LLM APIs (OpenAI, Claude, etc). Experience in NLP, model evaluation, and vector search is a plus.\n\nResponsibilities:\n- Build FastAPI-based microservices\n- Integrate and evaluate GPT-like models\n- Collaborate on inference pipelines and vector search components"
+    },
+    {
+      "resume": "",
+      "job_description": "We are looking for a Python backend developer to help us build a scalable system that integrates with OpenAI APIs. Experience with Docker, FastAPI, and basic understanding of prompt tuning is expected."
+    },
+    {
+      "resume": "THIS_IS_NOT_A_REAL_RESUME ||| ######## [[[]]] -- possibly corrupt data or failed parsing...",
+      "job_description": "We are hiring an engineer with experience in backend systems and generative AI. Must be fluent in Python and capable of deploying LLM-powered features in production. Familiarity with OpenAI, Anthropic, or Hugging Face APIs preferred."
+    }
+  ]
+
+for data in samples:
+    response = requests.post("http://localhost:8000/rank", json=data)
+    print(response.json())
